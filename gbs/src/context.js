@@ -17,6 +17,7 @@ class ProductProvider extends Component {
 
   componentDidMount() {
     this.setProducts();
+    this.setCart();
   }
   
   setProducts = () => {
@@ -27,6 +28,21 @@ class ProductProvider extends Component {
     })
     this.setState(() => {
       return {products: tempProducts}
+    })
+  }
+
+  setCart = () => {
+    const cart = localStorage.getItem('gb-cart-items');
+    if (!cart) { return {cart: []}}
+
+    const tempCartItems = JSON.parse(
+      localStorage.getItem('gb-cart-items')
+    );
+
+    const cartItems = tempCartItems.filter(item => item.count > 0);
+    
+    this.setState(() => {
+      return {cart: cartItems}
     })
   }
 
@@ -51,6 +67,7 @@ class ProductProvider extends Component {
     product.total = price;
 
     this.setState(() => {
+      this.saveToLocalStorage(tempProducts);
       return {products: tempProducts, cart:[...this.state.cart, product]};
     },
     () => {
@@ -141,6 +158,7 @@ class ProductProvider extends Component {
     },() => {
       this.setProducts();
       this.addTotals();
+      this.saveToLocalStorage([]);
   })
   }
 
@@ -157,6 +175,10 @@ class ProductProvider extends Component {
         cartTotal: total
       }
     })
+  }
+
+  saveToLocalStorage = (cart) => {
+    localStorage.setItem('gb-cart-items', JSON.stringify(cart))
   }
 
   render() {

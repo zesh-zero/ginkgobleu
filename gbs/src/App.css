@@ -105,8 +105,8 @@ body {
 .navbar-logo-img {
   grid-area: img;
   position: relative;
-  margin-top: 5px;
-  margin-left: 5px;
+  margin-top: 10px;
+  margin-left: 50px;
   border: solid 1.4px;
   border-radius: 50%;
   border-color: var(--clr-accent2);
@@ -122,7 +122,7 @@ body {
 }
 
 .navbar-dropdown-section {
-  margin-left: 150px;
+  margin-left: 200px;
 }
 
 .navbar-dropdown {
@@ -137,6 +137,7 @@ body {
   font-family: inherit;
   text-decoration: none;
   margin: 0;
+  /* cursor: default !important; */
 }
 
 .navbar-dropdown:hover {
@@ -169,7 +170,9 @@ body {
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
+  padding-right: 10px;
   margin: 0px;
+  text-transform: capitalize;
   /* margin-left: 10px;
   margin-top: 5px; */
 }
@@ -262,7 +265,8 @@ body {
   }
 
   .navbar-logo-img {
-    left: 33%;
+    /* left: 33%; */
+    left: calc((100% - 160px) / 2);
     width: 160px;
     height: 160px;
   }
