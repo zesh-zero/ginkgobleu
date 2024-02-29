@@ -228,6 +228,11 @@ body {
   
 }
 
+.cart {
+  margin-top: 50px;
+  max-width: 98%;
+}
+
 .footerBar {
   left: 0;
   min-width: 100%;

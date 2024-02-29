@@ -9,12 +9,10 @@ export default function CartItem({item,value}) {
         <img src={img} style={{width:'5rem', height:'5rem'}} className='img-fluid' alt='product' />
       </div>
       <div className='col-10 mx-auto col-lg-2'>
-        <span className='d-lg-non'>product : </span>
         {title}
       </div>
       <div className='col-10 mx-auto col-lg-2'>
-        <span className='d-lg-non'>price : </span>
-        {price}
+        {Math.round(price).toFixed(2)}
       </div>
       <div className='col-10 mx-auto col-lg-2 my-2 my-lg-0'>
         <div className='d-flex justify-content-center'>
@@ -32,7 +30,7 @@ export default function CartItem({item,value}) {
         </div>
       </div>
       <div className='col-10 mx-auto col-lg-2'>
-        <strong>item total : ${total}</strong>
+        <strong>${Math.round(total).toFixed(2)}</strong>
       </div>
     </div>
   );

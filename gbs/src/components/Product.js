@@ -35,7 +35,7 @@ export default class Product extends Component {
             </p>
             <h5 className='text-blue font-italic mb-0'>
               <span className='me-1'>$</span>
-              {price}
+              {Math.round(price).toFixed(2)}
             </h5>
           </div>
         </div>

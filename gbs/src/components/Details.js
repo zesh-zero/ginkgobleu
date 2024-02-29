@@ -32,7 +32,7 @@ export default class Details extends Component {
                   <h4 className='text-blue'>
                     <strong>
                       price : <span>$</span>
-                      {price}
+                      {Math.round(price).toFixed(2)}
                     </strong>
                   </h4>
                   <p className='text-capitalize font-weight-bold mt-3 mb-0'>
